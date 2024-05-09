@@ -3,7 +3,7 @@ ob_start();
 
 include('head.php');
 include("../Assets/Connection/connection.php");
-include("sessionvalidation.php");
+
 ?>
         <!--  Row 1 -->
         <div class="row">
@@ -12,7 +12,7 @@ include("sessionvalidation.php");
               <div class="card-body">
                 <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
                   <div class="mb-3 mb-sm-0">
-                    <h5 class="card-title fw-semibold">Sales Overview</h5>
+                    <h5 class="card-title fw-semibold">OVERVIEW</h5>
                   </div>
                 
                 </div>
@@ -23,11 +23,11 @@ include("sessionvalidation.php");
         </div>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
+        <script>
 var ctx = document.getElementById("myChart").getContext("2d");
 
 var data = {
-  labels: ['User', 'Owner'],
+  labels: ['User','Owner'],
   datasets: [{
     label: "Pending",
     backgroundColor: "blue",

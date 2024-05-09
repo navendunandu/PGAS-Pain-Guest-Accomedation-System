@@ -1,9 +1,9 @@
 
 <?php
 include("../Assets/Connection/connection.php");
-session_start();
-ob_flush();
 include('head.php');
+ob_flush();
+
 if(isset($_GET['declain']))
 {
   $updtQry="update tbl_owner set owner_vstatus=2 where owner_id=".$_GET['declain'];

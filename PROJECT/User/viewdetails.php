@@ -11,7 +11,6 @@ $i=0;
 while($row=$value-> fetch_assoc())
 {
 	$i++;
-	
 ?>
 
 
@@ -107,7 +106,30 @@ while($row=$value-> fetch_assoc())
             </tr>
             <tr>
                 <td colspan="6" class="text-center">
+                    <?php
+                     $selCheck="select * from tbl_booking where booking_status!=4 and room_id=".$row['room_id'];
+                        $resCheck=$connection->query($selCheck);
+                        if( $resCheck->num_rows > 0)   {
+                            $selGuest="select sum(booking_guest) as guest from tbl_booking where booking_status!=4 and room_id=".$row['room_id'];
+                            $resGuest=$connection->query($selGuest);
+                            $dataGuest=$resGuest->fetch_assoc();
+                            if( $dataGuest["guest"] < $row['room_guest']){
+                                $rooms=$row['room_guest']-$dataGuest['guest'];
+                                echo $rooms." Rooms Left!";
+                                ?><br>
                     <a href="Booking.php?rid=<?php echo $row['room_id']?>" class="btn btn-success mt-4">BOOK</a>
+                                <?php
+                            }
+                            else{
+                                echo "Room Full";
+                            }
+                        }
+                        else{
+                            ?>
+                    <a href="Booking.php?rid=<?php echo $row['room_id']?>" class="btn btn-success mt-4">BOOK</a>
+                    <?php
+                        }
+                    ?>
                 </td>
             </tr>
         </table>

@@ -1,6 +1,6 @@
 <?php
-include("../Assets/Connection/Connection.php");
-session_start();
+include("../Assets/Connection/connection.php");
+
 ob_start();
 include('head.php');
 ?>

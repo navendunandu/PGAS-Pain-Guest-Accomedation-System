@@ -1,8 +1,8 @@
 
 <?php
-session_start();
 
-ob_flush();
+
+
 include('Head.php');
 
 
@@ -41,7 +41,7 @@ include("../Assets/Connection/connection.php");
             <tbody>
                 <?php
                $selqry="select * from tbl_complaint c inner join tbl_user u on c.user_id=u.user_id inner join tbl_room r on c.room_id=r.room_id inner join tbl_owner o on r.owner_id=o.owner_id";
-               echo $selqry;
+               
                 $row = $connection->query($selqry);
                 $i = 0;
                 while($data = $row->fetch_assoc()) {

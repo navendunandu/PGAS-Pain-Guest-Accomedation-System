@@ -1,5 +1,6 @@
 <?php
 include('../Assets/Connection/connection.php');
+session_start();
 ?>
 <!DOCTYPE HTML>
 <html>

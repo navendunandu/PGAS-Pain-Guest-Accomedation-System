@@ -36,7 +36,7 @@ if(isset($_GET["cid"]))
    
     </tr>
      <?php
-	$selQry="select * from tbl_booking b inner join tbl_room r on b.room_id=r.room_id inner join tbl_user u on u.user_id=b.user_id where r.owner_id='".$_SESSION['oid']."' and b.booking_status=4";
+	  $selQry="select * from tbl_booking b inner join tbl_room r on b.room_id=r.room_id inner join tbl_user u on u.user_id=b.user_id where r.owner_id='".$_SESSION['oid']."' and b.booking_status>=1 and b.booking_payment>=1";
 	$row=$connection->query($selQry);
  $i=0;
 	while($data=$row->fetch_assoc())

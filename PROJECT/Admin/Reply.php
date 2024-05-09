@@ -1,7 +1,7 @@
 <?php
-ob_start();
-session_start();
-	include("../Assets/Connection/Connection.php");
+
+
+	include("../Assets/Connection/connection.php");
   ob_flush();
   include('Head.php');
   
@@ -10,7 +10,12 @@ session_start();
 	  $reply=$_POST["txt_reply"];
 	  $upQry="update tbl_complaint set complaint_reply='".$reply."',complaint_status=1 where complaint_id='".$_GET["rid"]."'";
 	  $row=$connection->query($upQry);
-	  header("location:Reply.php");
+	  ?>
+    <script>
+      alert("replay sucesfull");
+      window.location="viewcomplaint.php";
+    </script>
+    <?php
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

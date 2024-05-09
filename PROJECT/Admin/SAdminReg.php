@@ -8,12 +8,12 @@ include('Head.php');
 		$subadmin_number=$_POST['txt_number'];
 		$subadmin_email=$_POST['txt_email'];
 		$district_name=$_POST['txt_district'];
-    $subadmin_gender=$_POST['radio'];
+    	$subadmin_gender=$_POST['radio'];
 		$subadmin_password=$_POST['txt_password'];
-		$selAdmin="select * from tbl_admin where admin_email='".$user_email."' ";
-		$selsubadmin="select * from tbl_subadmin where subadmin_email='".$user_email."' ";
-		$selUser="select * from tbl_user where user_email='".$user_email."' "; 
-		$selOwner="select * from tbl_owner where owner_email='".$user_email."'";
+		$selAdmin="select * from tbl_admin where admin_email='".$subadmin_email."' ";
+		$selsubadmin="select * from tbl_subadmin where subadmin_email='".$subadmin_email."' ";
+		$selUser="select * from tbl_user where user_email='".$subadmin_email."' "; 
+		$selOwner="select * from tbl_owner where owner_email='".$subadmin_email."'";
 		
 		$resAdmin=$connection->query($selAdmin);
 		$ressubadmin=$connection->query($selsubadmin);

@@ -1,7 +1,7 @@
 <?php
 ob_start();
 include('head.php');
-session_start();
+
 include("../Assets/Connection/Connection.php");
 ?>
         <!--  Row 1 -->
@@ -11,7 +11,7 @@ include("../Assets/Connection/Connection.php");
               <div class="card-body">
                 <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
                   <div class="mb-3 mb-sm-0">
-                    <h5 class="card-title fw-semibold">Sales Overview</h5>
+                    <h5 class="card-title fw-semibold">OVERVIEW</h5>
                   </div>
                 
                 </div>

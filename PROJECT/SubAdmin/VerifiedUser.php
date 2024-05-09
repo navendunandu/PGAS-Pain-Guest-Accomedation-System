@@ -1,8 +1,7 @@
 
 <?php
 include("../Assets/Connection/connection.php");
-session_start();
-ob_flush();
+
 include('head.php');
 
 if(isset($_GET['declain']))

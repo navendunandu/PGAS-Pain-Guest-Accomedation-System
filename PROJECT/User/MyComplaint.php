@@ -1,8 +1,8 @@
 <?php
 include("../Assets/Connection/connection.php");
-//include("sessionvalidation.php");
-session_start();
-ob_start();
+
+
+
 include('head.php');
 
 ?>
@@ -70,3 +70,6 @@ include('Foot.php');
 ob_flush();
 ?>
 </html>
+
+
+

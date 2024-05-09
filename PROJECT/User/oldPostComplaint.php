@@ -1,19 +1,20 @@
 
 <?php
 include("../Assets/Connection/Connection.php");
-  include("sessionvalidation.php");
-  ob_start();
-include('head.php');
+  //include("sessionvalidation.php");
+  session_start();
+  ob_flush();
+include('Head.php');
   if(isset($_POST['btn_post']))
   {
 	 $title=$_POST['txt_title'];
 	  $content=$_POST['txt_content'];
-	  $insQry="insert into tbl_feedback(feedback_title,feedback_content,feedback_date,user_id)values('".$title."','".$content."',curdate(),'".$_SESSION["uid"]."')";
+	  $insQry="insert into tbl_complaint(complaint_title,complaint_content,complaint_date,user_id,room_id)values('".$title."','".$content."',curdate(),'".$_SESSION["uid"]."','".$_GET["cid"]."')";
 		$connection->query($insQry);	  
   }
-  if(isset($_GET['fid']))
+  if(isset($_GET['cid']))
 {	
-	$delqry="delete from tbl_feedback where feedback_id=".$_GET['fid'];
+	$delqry="delete from tbl_complaint where complaint_id=".$_GET['cid'];
 	$connection->query($delqry);
 }
 ?>
@@ -55,7 +56,7 @@ include('head.php');
       <td>ACTION</td>
     </tr>
      <?php
-	$selqry="select * from tbl_feedback where user_id='".$_SESSION["uid"]."'";
+	$selqry="select * from tbl_complaint where user_id='".$_SESSION["uid"]."'";
 	$row=$connection->query($selqry);
 	$i=0;
 	while($data=$row->fetch_assoc())
@@ -64,12 +65,12 @@ include('head.php');
 	?>
     <tr>
       <td><?php echo $i?></td>
-      <td><?php echo $data["feedback_title"]?></td>
-       <td><?php echo $data["feedback_content"]?></td>
-       <td><?php echo $data["feedback_date"]?></td>
+      <td><?php echo $data["complaint_title"]?></td>
+       <td><?php echo $data["complaint_content"]?></td>
+       <td><?php echo $data["complaint_date"]?></td>
        
 
-      <td><a href="Feedback.php?fid=<?php echo $data['feedback_id']?>">Delete</a></td>
+      <td><a href="PostComplaint.php?cid=<?php echo $data['complaint_id']?>">Delete</a></td>
     </tr>
 <?php
 	}

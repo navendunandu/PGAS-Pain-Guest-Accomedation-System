@@ -29,13 +29,21 @@ if(isset($_POST["btn_save"]))
 				}
 				else
 				{
-								echo "Not Match";
+								?>
+                                <script>
+                                    alert("Not Match");
+                                </script>
+                                <?php
 				}
 					
 		}
 		else
 		{
-			echo "Wrong password";
+			?>
+                                <script>
+                                    alert("Not Match");
+                                </script>
+                                <?php
 		}
 		
 }

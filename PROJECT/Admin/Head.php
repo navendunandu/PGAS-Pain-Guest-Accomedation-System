@@ -1,4 +1,6 @@
-
+<?php 
+include('sessionvalidation.php');
+?>
 <!doctype html>
 <html lang="en">
 

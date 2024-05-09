@@ -1,9 +1,9 @@
 
 <?php
 include("../Assets/Connection/connection.php");
-session_start();
-ob_flush();
 include('head.php');
+ob_flush();
+
 
 if (isset($_GET['accept'])) {
     $updtQry = "update tbl_user set user_vstatus=1 where user_id=" . $_GET['accept'];

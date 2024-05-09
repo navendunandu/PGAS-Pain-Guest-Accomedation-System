@@ -1,8 +1,8 @@
 
 <?php
-session_start();
 
-ob_flush();
+
+
 include('Head.php');
 
 
@@ -14,7 +14,7 @@ include('Head.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Category Management</title>
+    <title>Complaints</title>
     <!-- Include Bootstrap CSS (Assuming you have Bootstrap files in your project directory) -->
 </head>
 <body><?php
